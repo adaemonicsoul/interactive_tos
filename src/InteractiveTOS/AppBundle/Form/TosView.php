@@ -7,7 +7,7 @@
         use InteractiveTOS\BusinessBundle\Entity\Tos;
         use InteractiveTOS\BusinessBundle\Entity\User;
 
-        class TosProfile {
+        class TosView {
             /**
              * @var string
              */
@@ -28,7 +28,6 @@
              */
             public function __construct(Tos $tos){
                 $this->title = $tos->getTitle();
-                $this->user = $tos->getUser();
                 $textItems = array();
                 foreach ($tos->getTosItems() as $tosItem) {
                     $textItems[] = $tosItem->getText();

@@ -4,7 +4,8 @@
     namespace InteractiveTOS\AppBundle\Controller {
 
 
-        use InteractiveTOS\AppBundle\Form\TosProfile;
+        use InteractiveTOS\AppBundle\Form\TosView;
+        use InteractiveTOS\AppBundle\Form\TosType;
         use InteractiveTOS\BusinessBundle\Dao\TosDao;
         use InteractiveTOS\BusinessBundle\Entity\Tos;
         use InteractiveTOS\BusinessBundle\Service\TosService;
@@ -28,11 +29,11 @@
                 /** @var TosService $tosService */
                 $tosService = $this->get("interactivetos.service.tos");
 
-                $form = $this->createForm(new TosProfile($tos));
+                $form = $this->createForm(new TosType(), new TosView($tos));
                 $form->handleRequest($request);
                 if ($form->isValid()) {
                     $tosProfile = $form->getData();
-                    if($tosProfile instanceof TosProfile){
+                    if($tosProfile instanceof TosView){
                     $tos = $tosService->createTos($tosProfile->getTitle(),$tosProfile->getText(), $tosProfile->getUser());
                         /** @var TosDao $tosDao */
                         $tosDao = $this->get("interactivetos.dao.tos");

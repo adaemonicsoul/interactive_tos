@@ -3,6 +3,7 @@
 
     namespace InteractiveTOS\BusinessBundle\Entity {
 
+        use Doctrine\Common\Collections\ArrayCollection;
         use Doctrine\ORM\Mapping as ORM;
 
         /**
@@ -30,7 +31,7 @@
              * @var User
              * @ORM\OneToOne(targetEntity="User")
              */
-            private $owner;
+            private $user;
 
             /**
              * @var TosItem[]
@@ -55,15 +56,15 @@
             /**
              * @return User
              */
-            public function getOwner() {
-                return $this->owner;
+            public function getUser() {
+                return $this->user;
             }
 
             /**
              * @param User $owner
              */
-            public function setOwner($owner) {
-                $this->owner = $owner;
+            public function setUser($owner) {
+                $this->user = $owner;
             }
 
             /**
@@ -95,7 +96,7 @@
             }
 
             public function __construct(){
-                $this->tosItems = new TosItem[];
+                $this->tosItems = new ArrayCollection();
             }
         }
     }

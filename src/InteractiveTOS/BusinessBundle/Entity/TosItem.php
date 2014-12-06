@@ -28,7 +28,7 @@
 
             /**
              * @var Tos
-             * @ORM\ManyToOne(targetEntity="Tos" inversedBy="tosItems")
+             * @ORM\ManyToOne(targetEntity="Tos", inversedBy="tosItems")
              */
             private $tos;
 

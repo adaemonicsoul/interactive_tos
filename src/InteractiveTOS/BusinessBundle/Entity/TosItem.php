@@ -3,6 +3,7 @@
 
     namespace InteractiveTOS\BusinessBundle\Entity {
 
+        use Doctrine\Common\Collections\ArrayCollection;
         use Doctrine\ORM\Mapping as ORM;
 
         /**
@@ -31,6 +32,15 @@
              * @ORM\ManyToOne(targetEntity="Tos", inversedBy="tosItems")
              */
             private $tos;
+            /**
+             * @var TosItem[]
+             * @ORM\ManyToMany(targetEntity="TosItem")
+             */
+            private $similarItems;
+
+            public function __construct() {
+                $this->similarItems = new ArrayCollection();
+            }
 
             /**
              * @return int
@@ -72,6 +82,20 @@
              */
             public function setTos($tos) {
                 $this->tos = $tos;
+            }
+
+            /**
+             * @return TosItem[]
+             */
+            public function getSimilarItems() {
+                return $this->similarItems;
+            }
+
+            /**
+             * @param TosItem[] $similarItems
+             */
+            public function setSimilarItems($similarItems) {
+                $this->similarItems = $similarItems;
             }
         }
 

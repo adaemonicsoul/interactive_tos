@@ -1,46 +1,38 @@
 <?php
 
-
     namespace InteractiveTOS\BusinessBundle\Dao {
 
-
         use InteractiveTOS\BusinessBundle\Entity\Tos;
+        use InteractiveTOS\BusinessBundle\Entity\TosItem;
 
         class TosDao extends AbstractDao {
+
             public function __construct() {
                 parent::__construct('InteractiveTOSBusinessBundle:Tos');
             }
 
             /**
-             * @return Tos[]
+             * @param Tos $tos
              */
-            public function getAll() {
-                return $this->getRepository()->findAll();
+            public function save(Tos $tos) {
+                $this->saveOne($tos);
             }
 
             /**
-             * @param int $tosId
+             * @param string $text
              *
-             * @return Tos
+             * @return TosItem[]
              */
-            public function get($tosId) {
-                return $this->getRepository()->find($tosId);
-            }
+            public function searchItems($text) {
+                $qb = $this->getRepository('InteractiveTOSBusinessBundle:TosItem')->createQueryBuilder('ti')
+                    ->where('ti.text = :text');
 
-            /**
-             * @param $tos
-             */
-            public function save($tos) {
-                $this->save($tos);
-            }
+                $qb->setParameter('text', $text);
 
-            /**
-             * @param $tos
-             */
-            public function delete($tos) {
-                $this->delete($tos);
+                return $qb->getQuery()->getResult();
             }
         }
+
     }
 
- 
+?>

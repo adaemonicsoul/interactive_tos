@@ -39,6 +39,10 @@
              */
             private $tosItems;
 
+            public function __construct(){
+                $this->tosItems = new ArrayCollection();
+            }
+
             /**
              * @return int
              */
@@ -93,10 +97,6 @@
              */
             public function setTosItems($tosItems) {
                 $this->tosItems = $tosItems;
-            }
-
-            public function __construct(){
-                $this->tosItems = new ArrayCollection();
             }
         }
     }

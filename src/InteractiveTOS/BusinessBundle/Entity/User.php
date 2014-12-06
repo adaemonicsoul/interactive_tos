@@ -28,6 +28,11 @@
              * @var string
              * @ORM\Column(type="string")
              */
+            private $password;
+            /**
+             * @var string
+             * @ORM\Column(type="string")
+             */
             private $firstName;
             /**
              * @var string
@@ -39,6 +44,11 @@
              * @ORM\ManyToMany(targetEntity="Role")
              */
             private $roles;
+            /**
+             * @var Website[]
+             * @ORM\OneToMany(targetEntity="Website", mappedBy="user")
+             */
+            private $websites;
 
             public function __construct() {
                 $this->roles = new ArrayCollection();
@@ -112,6 +122,20 @@
              */
             public function setUsername($username) {
                 $this->username = $username;
+            }
+
+            /**
+             * @return Website[]
+             */
+            public function getWebsites() {
+                return $this->websites;
+            }
+
+            /**
+             * @param Website[] $websites
+             */
+            public function setWebsites($websites) {
+                $this->websites = $websites;
             }
         }
 

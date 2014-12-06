@@ -5,6 +5,7 @@
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetosui/css/style.css') }}"/>
@@ -15,7 +16,15 @@
 
 <body>
 <div id="content">
-    <header></header>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h1 class="logo">Interactive TOS</h1>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="container">
         {% block content %}{% endblock %}
     </div>

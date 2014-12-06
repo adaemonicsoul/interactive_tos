@@ -1,6 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
 html,
 body {
     height: 100%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #content {
@@ -11,4 +14,21 @@ body {
 #push,
 #footer {
     height: 100px;
+}
+
+#footer {
+    background: black;
+}
+
+#header {
+    background: black;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.logo {
+    padding: 10px;
 }

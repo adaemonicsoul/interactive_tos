@@ -16,6 +16,14 @@
             public function getAll() {
                 return $this->getRepository()->findAll();
             }
+
+            /**
+             * @param int $userId
+             * @return User
+             */
+            public function get($userId){
+                return $this->getRepository()->find($userId);
+            }
         }
 
     }

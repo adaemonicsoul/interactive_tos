@@ -12,6 +12,13 @@
         </service>
 
         <service id="interactivetos.dao.user" class="InteractiveTOS\BusinessBundle\Dao\UserDao" parent="interactivetos.dao.abstract"/>
+        <service id="interactivetos.dao.tos" class="InteractiveTOS\BusinessBundle\Dao\TosDao" parent="interactivetos.dao.abstract"/>
+
+        <service id="interactivetos.service.tos" class="InteractiveTOS\BusinessBundle\Service\TosService">
+            <call method="setTosDao">
+                <argument type="service" id="interactivetos.dao.tos"/>
+            </call>
+        </service>
 
     </services>
 </container>

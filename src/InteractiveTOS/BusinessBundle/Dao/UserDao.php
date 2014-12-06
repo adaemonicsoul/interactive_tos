@@ -24,6 +24,21 @@
             public function get($userId){
                 return $this->getRepository()->find($userId);
             }
+
+
+            /**
+             * @param $user
+             */
+            public function save($user){
+                $this->save($user);
+            }
+
+            /**
+             * @param $user
+             */
+            public function delete($user){
+                $this->delete($user);
+            }
         }
 
     }

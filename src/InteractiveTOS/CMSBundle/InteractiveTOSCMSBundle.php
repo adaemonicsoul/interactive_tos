@@ -8,7 +8,7 @@
          * Class InteractiveTosCMSBundle
          * @package InteractiveTOS\CMSBundle
          */
-        class InteractiveTosCMSBundle extends Bundle {
+        class InteractiveTOSCMSBundle extends Bundle {
 
         }
 

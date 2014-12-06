@@ -1,0 +1,14 @@
+html,
+body {
+    height: 100%;
+}
+
+#content {
+    height: 100%;
+    margin-bottom: -100px;
+}
+
+#push,
+#footer {
+    height: 100px;
+}

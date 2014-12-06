@@ -2,18 +2,27 @@
 <html>
 
 <head>
-    <title>{% block title ~ "Interactive TOS" %}</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetosui/css/style.css') }}"/>
 
-    {% block styles %}
-    {% block scripts %}
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
 </head>
 
 <body>
+<div id="content">
+    <header></header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="push"></div>
+</div>
+<footer id="footer">
 
+</footer>
 </body>
 </html>

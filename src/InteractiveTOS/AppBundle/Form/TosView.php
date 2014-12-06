@@ -19,11 +19,6 @@
             private $text;
 
             /**
-             * @var User
-             */
-            private $user;
-
-            /**
              * @param Tos $tos
              */
             public function __construct(Tos $tos){

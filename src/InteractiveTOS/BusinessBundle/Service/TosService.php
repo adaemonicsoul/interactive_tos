@@ -46,11 +46,24 @@
              * @return Tos
              */
             public function createTos($title, $text, User $user) {
-                $paragraphs = explode(PHP_EOL, $text);
-
                 $tos = new Tos();
                 $tos->setTitle($title);
                 $tos->setUser($user);
+
+                $tos->setTosItems($this->createTosItems($text));
+
+                return $tos;
+            }
+
+            /**
+             * @param string $text
+             *
+             * @return TosItem[]
+             */
+            public function createTosItems($text) {
+                $paragraphs = explode(PHP_EOL, $text);
+
+                $items = array();
 
                 foreach ($paragraphs as $paragraph) {
                     $similarItems = $this->tosDao->searchItems($paragraph);
@@ -59,10 +72,10 @@
                     $tosItem->setText($paragraph);
                     $tosItem->setSimilarItems($similarItems);
 
-                    $tos->getTosItems()->add($tosItem);
+                    $items[] = $tosItem;
                 }
 
-                return $tos;
+                return $items;
             }
         }
 

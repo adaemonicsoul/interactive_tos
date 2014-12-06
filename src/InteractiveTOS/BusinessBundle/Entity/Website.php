@@ -2,6 +2,7 @@
 
     namespace InteractiveTOS\BusinessBundle\Entity {
 
+        use Doctrine\Common\Collections\ArrayCollection;
         use Doctrine\ORM\Mapping as ORM;
 
         /**
@@ -28,6 +29,15 @@
              * @ORM\ManyToOne(targetEntity="User", inversedBy="websites")
              */
             private $user;
+            /**
+             * @var Tos[]
+             * @ORM\OneToMany(targetEntity("Tos", mappedBy="website")
+             */
+            private $tosList;
+
+            public function __construct() {
+                $this->tosList = new ArrayCollection();
+            }
 
             /**
              * @return string
@@ -69,6 +79,20 @@
              */
             public function setUser($user) {
                 $this->user = $user;
+            }
+
+            /**
+             * @return Tos[]
+             */
+            public function getTosList() {
+                return $this->tosList;
+            }
+
+            /**
+             * @param Tos[] $tosList
+             */
+            public function setTosList($tosList) {
+                $this->tosList = $tosList;
             }
         }
 

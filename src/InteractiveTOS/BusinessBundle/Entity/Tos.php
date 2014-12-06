@@ -35,11 +35,16 @@
 
             /**
              * @var TosItem[]
-             * @ORM\OneToMany(targetEntity="TosItem", mappedBy="tos")
+             * @ORM\OneToMany(targetEntity="TosItem", mappedBy="tos", cascade={"persist", "remove"})
              */
             private $tosItems;
+            /**
+             * @var Website
+             * @ORM\ManyToOne(targetEntity="Website", inversedBy="tosList")
+             */
+            private $website;
 
-            public function __construct(){
+            public function __construct() {
                 $this->tosItems = new ArrayCollection();
             }
 
@@ -97,6 +102,20 @@
              */
             public function setTosItems($tosItems) {
                 $this->tosItems = $tosItems;
+            }
+
+            /**
+             * @return Website
+             */
+            public function getWebsite() {
+                return $this->website;
+            }
+
+            /**
+             * @param Website $website
+             */
+            public function setWebsite($website) {
+                $this->website = $website;
             }
         }
     }

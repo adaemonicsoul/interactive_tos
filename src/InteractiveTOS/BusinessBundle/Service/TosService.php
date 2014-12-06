@@ -6,7 +6,6 @@
         use InteractiveTOS\BusinessBundle\Entity\Tos;
         use InteractiveTOS\BusinessBundle\Entity\TosItem;
         use InteractiveTOS\BusinessBundle\Entity\User;
-        use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
         /**
          * Class TosService

@@ -65,10 +65,10 @@
             }
 
             /**
-             * @param User $owner
+             * @param User $user
              */
-            public function setUser($owner) {
-                $this->user = $owner;
+            public function setUser($user) {
+                $this->user = $user;
             }
 
             /**

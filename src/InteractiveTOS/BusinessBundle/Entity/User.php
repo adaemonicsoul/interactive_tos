@@ -137,6 +137,20 @@
             public function setWebsites($websites) {
                 $this->websites = $websites;
             }
+
+            /**
+             * @return string
+             */
+            public function getPassword() {
+                return $this->password;
+            }
+
+            /**
+             * @param string $password
+             */
+            public function setPassword($password) {
+                $this->password = $password;
+            }
         }
 
     }

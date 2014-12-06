@@ -1,6 +1,6 @@
 <?php
 
-    namespace InteractiveTOS\BusinessBundle\Entity {
+    namespace InteractiveTOS\BusinessBundle\Dao {
 
         use Doctrine\Bundle\DoctrineBundle\Registry;
         use Doctrine\ORM\EntityRepository;

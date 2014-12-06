@@ -23,7 +23,8 @@
          */
         class TosController extends Controller {
             /**
-             * @Route("/", name="tos.action.list")
+             * @Route("/", name="tos.list")
+             * @param Website $website
              */
             public function listAction(Website $website) {
 
@@ -34,7 +35,7 @@
              * @param Request $request
              *
              * @return array
-             * @Route("/new", name="tos.action.new")
+             * @Route("/new", name="tos.new")
              */
             public function newAction(Website $website, Request $request) {
                 $tos = new Tos();
@@ -44,7 +45,7 @@
             }
 
             /**
-             * @Route("/{id}", name="tos.action.edit")
+             * @Route("/{id}", name="tos.edit")
              * @param Website $website
              * @param Tos $tos
              * @param Request $request

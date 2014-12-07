@@ -2,12 +2,12 @@
 
 html,
 body {
-    height: 100%;
+    height:      100%;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #content {
-    height: 100%;
+    height:        100%;
     margin-bottom: -100px;
 }
 
@@ -32,4 +32,17 @@ h1 {
 .logo {
     padding: 10px;
     text-align: center;
+}
+
+#interactivetos_website_websiteview label {
+    padding: 10px;
+}
+
+#interactivetos_website_websiteview input {
+    width: 80%;
+}
+
+#interactivetos_website_websiteview_save {
+    background: #000000;
+    display: inline-block;
 }

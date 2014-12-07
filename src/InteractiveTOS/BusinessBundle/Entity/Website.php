@@ -35,6 +35,12 @@
              */
             private $tosList;
 
+            /**
+             * @var Category[]
+             * @ORM\ManyToOne(targetEntity="Category")
+             */
+            private $categoryList;
+
             public function __construct() {
                 $this->tosList = new ArrayCollection();
             }
@@ -94,6 +100,22 @@
             public function setTosList($tosList) {
                 $this->tosList = $tosList;
             }
+
+            /**
+             * @return Category[]
+             */
+            public function getCategoryList() {
+                return $this->categoryList;
+            }
+
+            /**
+             * @param Category[] $categoryList
+             */
+            public function setCategoryList($categoryList) {
+                $this->categoryList = $categoryList;
+            }
+
+
         }
 
     }

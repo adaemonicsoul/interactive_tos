@@ -39,14 +39,14 @@
             /**
              * @param $website
              */
-            public function save($website) {
+            public function save(Website $website) {
                 $this->save($website);
             }
 
             /**
              * @param $website
              */
-            public function delete($website) {
+            public function delete(Website $website) {
                 $this->delete($website);
             }
         }

@@ -14,7 +14,6 @@
         <service id="interactivetos.dao.user" class="InteractiveTOS\BusinessBundle\Dao\UserDao" parent="interactivetos.dao.abstract"/>
         <service id="interactivetos.dao.role" class="InteractiveTOS\BusinessBundle\Dao\RoleDao" parent="interactivetos.dao.abstract"/>
         <service id="interactivetos.dao.tos" class="InteractiveTOS\BusinessBundle\Dao\TosDao" parent="interactivetos.dao.abstract"/>
-        <service id="interactivetos.dao.tositem" class="InteractiveTOS\BusinessBundle\Dao\TosItemDao" parent="interactivetos.dao.abstract"/>
         <service id="interactivetos.dao.website" class="InteractiveTOS\BusinessBundle\Dao\WebsiteDao" parent="interactivetos.dao.abstract"/>
 
         <service id="interactivetos.service.tos" class="InteractiveTOS\BusinessBundle\Service\TosService">

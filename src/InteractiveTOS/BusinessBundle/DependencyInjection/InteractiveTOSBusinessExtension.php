@@ -8,10 +8,10 @@
         use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
         /**
-         * Class InteractiveTOSBussinessExtension
+         * Class InteractiveTOSBusinessExtension
          * @package InteractiveTOS\BusinessBundle\DependencyInjection
          */
-        class InteractiveTOSBussinessExtension extends Extension {
+        class InteractiveTOSBusinessExtension extends Extension {
 
             /**
              * Loads a specific configuration.

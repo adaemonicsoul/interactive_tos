@@ -31,7 +31,7 @@
             private $user;
             /**
              * @var Tos[]
-             * @ORM\OneToMany(targetEntity("Tos", mappedBy="website")
+             * @ORM\OneToMany(targetEntity="Tos", mappedBy="website")
              */
             private $tosList;
 

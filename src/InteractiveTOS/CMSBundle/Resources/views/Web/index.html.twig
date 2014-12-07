@@ -1,12 +1,20 @@
 {% extends "InteractiveTOSUIBundle::layout.html.twig" %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetoscms/style.css') }}"/>
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-lg-6">
-
+            <div class="description-container">
+                <a href="#webmasters">For Webmasters</a>
+            </div>
         </div>
         <div class="col-lg-6">
-
+            <div class="description-container">
+                <a href="#users">For users</a>
+            </div>
         </div>
     </div>
 {% endblock %}

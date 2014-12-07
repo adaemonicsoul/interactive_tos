@@ -12,11 +12,14 @@
         use Symfony\Bundle\FrameworkBundle\Controller\Controller;
         use Symfony\Component\HttpFoundation\Request;
 
+        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
         /**
          * Class WebsiteController
          * @package InteractiveTOS\AppBundle\Controller
          * @Template()
-         * @Route("/website")
+         * @Route("/websites")
          */
         class WebsiteController extends Controller {
             /**

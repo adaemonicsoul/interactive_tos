@@ -1,19 +1,26 @@
 {% extends "InteractiveTOSUIBundle::layout.html.twig" %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetoscms/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetoscms/css/style.css') }}"/>
 {% endblock %}
 
 {% block content %}
     <div class="row">
+        <div class="col-lg-12 content-description">
+            <h2>
+                Reinventing the way users interact with Terms of Services everywhere.
+            </h2>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-6">
-            <div class="description-container">
-                <a href="#webmasters">For Webmasters</a>
+            <div class="description-container webmaster-description-container">
+                <a class="button" href="#webmasters">For Webmasters <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="description-container">
-                <a href="#users">For users</a>
+            <div class="description-container users-description-container">
+                <a class="button" href="#users">For users <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>

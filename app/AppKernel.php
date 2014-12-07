@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new InteractiveTOS\BusinessBundle\InteractiveTOSBusinessBundle(),
             new InteractiveTOS\CMSBundle\InteractiveTOSCMSBundle(),
+            new InteractiveTOS\AppBundle\InteractiveTOSAppBundle(),
             new InteractiveTOS\UIBundle\InteractiveTOSUIBundle()
         );
 

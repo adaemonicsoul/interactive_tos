@@ -12,10 +12,19 @@
             }
 
             /**
+             * @param WebsiteSearchContext $context
+             *
              * @return Website[]
              */
-            public function getAll() {
-                return $this->getRepository()->findAll();
+            public function search(WebsiteSearchContext $context) {
+                $qb = $this->getRepository('InteractiveTOSBusinessBundle:Website')->createQueryBuilder('w');
+
+                if(!empty($context->getText())){
+                    $qb->where('w.address LIKE :text');
+                    $qb->setParameter('text', $context->getText());
+                }
+
+                return $qb->getQuery()->getResult();
             }
 
             /**

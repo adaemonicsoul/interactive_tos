@@ -4,15 +4,14 @@
     namespace InteractiveTOS\AppBundle\Controller {
 
 
-        use InteractiveTOS\AppBundle\Form\TosView;
         use InteractiveTOS\AppBundle\Form\TosType;
+        use InteractiveTOS\AppBundle\Form\TosView;
+        use InteractiveTOS\BusinessBundle\Dao\TosSearchContext;
         use InteractiveTOS\BusinessBundle\Entity\Tos;
         use InteractiveTOS\BusinessBundle\Entity\Website;
         use InteractiveTOS\BusinessBundle\Service\TosService;
         use Symfony\Bundle\FrameworkBundle\Controller\Controller;
         use Symfony\Component\HttpFoundation\Request;
-        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-        use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
         /**
          * Class TosController
@@ -25,9 +24,16 @@
             /**
              * @Route("/", name="tos.list")
              * @param Website $website
+             *
+             * @return \InteractiveTOS\BusinessBundle\Entity\Tos[]
              */
             public function listAction(Website $website) {
+                /** @var TosService $tosService */
+                $tosService = $this->get("interactivetos.service.tos");
+                $context = new TosSearchContext();
 
+                $context->setWebsiteId($website->getId());
+                return $tosService->search($context);
             }
 
             /**
@@ -67,6 +73,8 @@
                         $tos->setTitle($tosView->getTitle());
 
                         $tosService->save($tos);
+
+                        return $this->redirect($this->generateUrl('tos.list'));
                     }
                 }
 
@@ -76,8 +84,6 @@
                 );
             }
         }
-
-
     }
 
  

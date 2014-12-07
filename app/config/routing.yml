@@ -1,3 +1,7 @@
-app:
+cms:
     resource: @InteractiveTOSCMSBundle/Controller/
+    type:     annotation
+
+app:
+    resource: @InteractiveTOSAppBundle/Controller/
     type:     annotation

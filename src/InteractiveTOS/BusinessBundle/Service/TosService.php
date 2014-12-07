@@ -3,6 +3,7 @@
     namespace InteractiveTOS\BusinessBundle\Service {
 
         use InteractiveTOS\BusinessBundle\Dao\TosDao;
+        use InteractiveTOS\BusinessBundle\Dao\TosSearchContext;
         use InteractiveTOS\BusinessBundle\Entity\Tos;
         use InteractiveTOS\BusinessBundle\Entity\TosItem;
         use InteractiveTOS\BusinessBundle\Entity\User;
@@ -76,6 +77,15 @@
                 }
 
                 return $items;
+            }
+
+            /**
+             * @param TosSearchContext $context
+             *
+             * @return Tos[]
+             */
+            public function search(TosSearchContext $context){
+                return $this->tosDao->search($context);
             }
         }
 

@@ -16,7 +16,7 @@
              *
              * @return null|Tos
              */
-            public function get($tosId){
+            public function get($tosId) {
                 return $this->getRepository()->find($tosId);
             }
 
@@ -27,21 +27,21 @@
              */
             public function search(TosSearchContext $context) {
                 $qb = $this->getRepository('InteractiveTOSBusinessBundle:Tos')->createQueryBuilder('t');
-                $isWhereUsed = false;
+                $isWhereUsed = FALSE;
 
-                if(!empty($context->getTitle())){
+                if (!empty($context->getTitle())) {
                     $qb->where('t.title = :title');
                     $qb->setParameter('title', $context->getTitle());
-                    $isWhereUsed = true;
+                    $isWhereUsed = TRUE;
                 }
 
-                if(!empty($context->getWebsiteId())){
-                    if(!$isWhereUsed){
-                        $qb->where('t.websiteId = :websiteId');
-                    }
-                    else{
-                        $qb->andWhere('t.websiteId = :websiteId');
-                        $isWhereUsed = true;
+                if (!empty($context->getWebsiteId())) {
+                    $qb->join('t.website', 'w');
+                    if (!$isWhereUsed) {
+                        $qb->where('w.id = :websiteId');
+                    } else {
+                        $qb->andWhere('w.id = :websiteId');
+                        $isWhereUsed = TRUE;
                     }
                     $qb->setParameter('websiteId', $context->getTitle());
                 }

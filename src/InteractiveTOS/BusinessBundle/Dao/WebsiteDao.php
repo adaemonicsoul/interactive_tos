@@ -37,17 +37,17 @@
             }
 
             /**
-             * @param $website
+             * @param Website $website
              */
             public function save(Website $website) {
-                $this->save($website);
+                $this->saveOne($website);
             }
 
             /**
-             * @param $website
+             * @param Website $website
              */
             public function delete(Website $website) {
-                $this->delete($website);
+                $this->deleteOne($website);
             }
         }
 

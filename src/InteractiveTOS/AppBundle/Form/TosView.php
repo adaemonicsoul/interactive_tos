@@ -16,7 +16,7 @@
             /**
              * @var string
              */
-            private $text;
+            private $content;
 
             /**
              * @param Tos $tos
@@ -28,7 +28,7 @@
                     $textItems[] = $tosItem->getText();
                 }
 
-                $this->text = join(PHP_EOL, $textItems);
+                $this->content = join(PHP_EOL, $textItems);
             }
 
             /**
@@ -48,15 +48,15 @@
             /**
              * @return string
              */
-            public function getText() {
-                return $this->text;
+            public function getContent() {
+                return $this->content;
             }
 
             /**
              * @param string $text
              */
-            public function setText($text) {
-                $this->text = $text;
+            public function setContent($text) {
+                $this->content = $text;
             }
 
             /**

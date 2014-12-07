@@ -41,6 +41,7 @@
              *
              * @return array
              * @Route("/new", name="website.new")
+             * @Template("InteractiveTOSAppBundle:Website:edit.html.twig")
              */
             public function newAction(Request $request) {
                 return $this->editAction(new Website(), $request);
@@ -55,19 +56,14 @@
              * @return array
              */
             public function editAction(Website $website, Request $request) {
-                $form = $this->createForm(new WebsiteType(), new WebsiteView($website));
+                $form = $this->createForm(new WebsiteType(), $website);
                 $form->handleRequest($request);
                 if ($form->isValid()) {
-                    $websiteView = $form->getData();
-                    if ($websiteView instanceof WebsiteView) {
-                        $website->setAddress($websiteView->getAddress());
+                    /** @var WebsiteDao $websiteDao */
+                    $websiteDao = $this->get("interactivetos.dao.website");
+                    $websiteDao->save($website);
 
-                        /** @var WebsiteDao $websiteDao */
-                        $websiteDao = $this->get("interactivetos.dao.website");
-                        $websiteDao->save($website);
-
-                        return $this->redirect($this->generateUrl('website.list', array('websiteId' => $website->getId())));
-                    }
+                    return $this->redirect($this->generateUrl('website.list', array()));
                 }
 
                 return array(
@@ -76,7 +72,14 @@
                 );
             }
 
-            public function deleteAction(Website $website){
+            /**
+             * @param Website $website
+             *
+             * @Route("/delete/{id}", name="website.delete")
+             *
+             * @return \Symfony\Component\HttpFoundation\RedirectResponse
+             */
+            public function deleteAction(Website $website) {
                 /** @var WebsiteDao $websiteDao */
                 $websiteDao = $this->get("interactivetos.dao.website");
                 $websiteDao->delete($website);

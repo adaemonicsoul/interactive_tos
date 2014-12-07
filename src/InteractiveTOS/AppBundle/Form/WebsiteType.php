@@ -20,7 +20,7 @@ namespace InteractiveTOS\AppBundle\Form{
 
         public function buildForm(FormBuilderInterface $builder, array $options) {
             $builder->add('address', 'text', array('label' => 'website.address'));
-            $builder->add('categories', 'entity', array(
+            $builder->add('category', 'entity', array(
                 'class' => 'InteractiveTOSBusinessBundle:Category',
                 'property' => 'name',
             ));

@@ -56,14 +56,18 @@
              * @param object $object
              */
             protected function saveOne($object) {
-                $this->getRegistry()->getManager()->persist($object);
+                $manager = $this->getRegistry()->getManager();
+                $manager->persist($object);
+                $manager->flush();
             }
 
             /**
              * @param object $object
              */
             protected function deleteOne($object) {
-                $this->getRegistry()->getManager()->remove($object);
+                $manager = $this->getRegistry()->getManager();
+                $manager->remove($object);
+                $manager->flush();
             }
         }
 

@@ -36,10 +36,10 @@
             private $tosList;
 
             /**
-             * @var Category[]
+             * @var Category
              * @ORM\ManyToOne(targetEntity="Category")
              */
-            private $categoryList;
+            private $category;
 
             public function __construct() {
                 $this->tosList = new ArrayCollection();
@@ -102,17 +102,17 @@
             }
 
             /**
-             * @return Category[]
+             * @return Category
              */
-            public function getCategoryList() {
-                return $this->categoryList;
+            public function getCategory() {
+                return $this->category;
             }
 
             /**
-             * @param Category[] $categoryList
+             * @param Category $category
              */
-            public function setCategoryList($categoryList) {
-                $this->categoryList = $categoryList;
+            public function setCategory($category) {
+                $this->category = $category;
             }
 
 

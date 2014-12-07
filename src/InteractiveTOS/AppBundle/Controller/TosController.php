@@ -71,7 +71,7 @@
                 if ($form->isValid()) {
                     $tosView = $form->getData();
                     if ($tosView instanceof TosView) {
-                        $items = $tosService->createTosItems($tosView->getText());
+                        $items = $tosService->createTosItems($tosView->getContent());
                         $tos->setTosItems($items);
                         $tos->setWebsite($website);
                         $tos->setTitle($tosView->getTitle());

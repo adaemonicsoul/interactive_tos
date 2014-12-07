@@ -30,14 +30,14 @@
              * @param $user
              */
             public function save($user){
-                $this->save($user);
+                $this->saveOne($user);
             }
 
             /**
              * @param $user
              */
             public function delete($user){
-                $this->delete($user);
+                $this->deleteOne($user);
             }
         }
 

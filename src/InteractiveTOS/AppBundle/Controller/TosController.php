@@ -37,7 +37,13 @@
                 $context = new TosSearchContext();
 
                 $context->setWebsiteId($website->getId());
-                return $tosService->search($context);
+                $toses = $tosService->search($context);
+
+                var_dump($website->getId());
+
+                return array(
+                    'toses' => $toses
+                );
             }
 
             /**
@@ -46,6 +52,7 @@
              *
              * @return array
              * @Route("/new", name="tos.new")
+             * @Template("InteractiveTOSAppBundle:Tos:edit.html.twig")
              */
             public function newAction(Website $website, Request $request) {
                 $tos = new Tos();
@@ -72,13 +79,17 @@
                     $tosView = $form->getData();
                     if ($tosView instanceof TosView) {
                         $items = $tosService->createTosItems($tosView->getContent());
+                        foreach ($items as $item) {
+                            $item->setTos($tos);
+                        }
+
                         $tos->setTosItems($items);
                         $tos->setWebsite($website);
                         $tos->setTitle($tosView->getTitle());
 
                         $tosService->save($tos);
 
-                        return $this->redirect($this->generateUrl('tos.list'));
+                        return $this->redirect($this->generateUrl('tos.list', array('websiteId' => $website->getId())));
                     }
                 }
 

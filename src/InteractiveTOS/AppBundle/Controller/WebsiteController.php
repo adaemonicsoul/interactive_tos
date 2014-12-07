@@ -5,7 +5,6 @@
 
 
         use InteractiveTOS\AppBundle\Form\WebsiteType;
-        use InteractiveTOS\AppBundle\Form\WebsiteView;
         use InteractiveTOS\BusinessBundle\Dao\WebsiteDao;
         use InteractiveTOS\BusinessBundle\Dao\WebsiteSearchContext;
         use InteractiveTOS\BusinessBundle\Entity\Website;

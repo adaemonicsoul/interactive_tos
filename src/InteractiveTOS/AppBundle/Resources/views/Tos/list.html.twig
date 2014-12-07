@@ -1,7 +1,23 @@
 {% extends "InteractiveTOSUIBundle::layout.html.twig" %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetosapp/css/style.css') }}"/>
+{% endblock %}
+
 {% block content %}
     <div class="col-lg-12">
-
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for tos in toses %}
+                <tr>
+                    <td>{{ tos.title }}</td>
+                    <td><a href="{{ url('tos.edit', {'id': tos.id}) }}">Edit</a></td>
+                    <td><a href="{{ url('tos.view', {'id': tos.id}) }}">View</a></td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock %}

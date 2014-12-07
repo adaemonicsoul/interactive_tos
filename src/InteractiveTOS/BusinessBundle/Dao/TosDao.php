@@ -46,6 +46,8 @@
                     $qb->setParameter('websiteId', $context->getTitle());
                 }
 
+                var_dump($qb->getQuery()->getSQL());
+
                 return $qb->getQuery()->getResult();
             }
 

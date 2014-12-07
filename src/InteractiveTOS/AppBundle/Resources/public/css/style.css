@@ -1,0 +1,12 @@
+#interactivetos_website_websiteview label {
+    padding: 10px;
+}
+
+#interactivetos_website_websiteview input {
+    width: 80%;
+}
+
+#interactivetos_website_websiteview_save {
+    background: #000000;
+    display: inline-block;
+}

@@ -31,14 +31,14 @@
              * @param $role
              */
             public function save($role) {
-                $this->save($role);
+                $this->saveOne($role);
             }
 
             /**
              * @param $role
              */
             public function delete($role) {
-                $this->delete($role);
+                $this->deleteOne($role);
             }
         }
     }

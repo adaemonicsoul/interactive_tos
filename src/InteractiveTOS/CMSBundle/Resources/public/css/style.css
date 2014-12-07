@@ -1,5 +1,5 @@
 .description-container {
-    padding-top: 30%;
+    padding: 30% 0 30% 0;
     text-align: center;
 }
 
@@ -33,4 +33,32 @@
     font-size: 25px;
     text-transform: uppercase;
     border-bottom: 1px solid #f0f0f0;
+}
+
+.footer-note {
+    border-top: 1px solid #f0f0f0;
+    padding: 5% 0 5% 0;
+    text-align: center;
+}
+
+#webmasters,
+#users {
+    display: none;
+    text-align: center;
+    font-size: 36px;
+    padding: 10px;
+}
+
+#webmasters h3,
+#users h3 {
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+#webmasters {
+    border: 1px solid #05BEA4;
+}
+
+#users {
+    border: 1px solid red;
 }

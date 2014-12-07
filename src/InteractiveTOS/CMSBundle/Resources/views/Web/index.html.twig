@@ -4,6 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/interactivetoscms/css/style.css') }}"/>
 {% endblock %}
 
+{% block scripts %}
+    <script type="text/javascript" src="{{ asset("bundles/interactivetoscms/js/index.js") }}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-lg-12 content-description">
@@ -15,13 +19,38 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="description-container webmaster-description-container">
-                <a class="button" href="#webmasters">For Webmasters <i class="fa fa-arrow-circle-right"></i></a>
+                <a class="button revealing-button revealing-hide" href="#webmasters">For Webmasters <i class="fa fa-arrow-circle-right"></i></a>
+
+                <div id="webmasters">
+                    <h3>For Webmasters</h3>
+                    Manage TOSes for all your websites and see how similar they are with other websites in your
+                    category.
+
+                    <hr/>
+
+                    <a class="button" href="#">Create an account now <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="description-container users-description-container">
-                <a class="button" href="#users">For users <i class="fa fa-arrow-circle-right"></i></a>
+                <a class="button revealing-button revealing-hide" href="#users">For users <i class="fa fa-arrow-circle-right"></i></a>
+
+                <div id="users">
+                    <h3>For Users</h3>
+                    Skip through TOSes that you've already read and focus on what it is that you need to know for a
+                    specific website.
+
+                    <hr/>
+
+                    <a class="button" href="#">Create an account now <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 footer-note">
+            Already have an account? <a href="#">Sign In</a>
         </div>
     </div>
 {% endblock %}

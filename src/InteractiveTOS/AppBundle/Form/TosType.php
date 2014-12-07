@@ -15,7 +15,7 @@
              * @return string The name of this type
              */
             public function getName() {
-                return 'interactivetos.tos.tosview';
+                return 'interactivetos_tos_tosview';
             }
 
             /**

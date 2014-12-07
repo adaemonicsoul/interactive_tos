@@ -15,7 +15,7 @@ namespace InteractiveTOS\AppBundle\Form{
          * @return string The name of this type
          */
         public function getName() {
-            return 'interactivetos.website.websiteview';
+            return 'interactivetos_website_websiteview';
         }
 
         public function buildForm(FormBuilderInterface $builder, array $options) {

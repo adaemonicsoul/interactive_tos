@@ -29,8 +29,10 @@
                 /** @var WebsiteDao $websiteDao */
                 $websiteDao = $this->get('interactivetos.dao.website');
 
+                $websites = $websiteDao->search(new WebsiteSearchContext());
+
                 return array(
-                    'websites' => $websiteDao->search(new WebsiteSearchContext())
+                    'websites' => $websites
                 );
             }
 
